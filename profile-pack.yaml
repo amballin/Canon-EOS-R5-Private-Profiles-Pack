@@ -1,0 +1,23 @@
+manifest_version: 1
+pack_id: 7b8b09df-41c8-4500-aa0e-56fac4e9f8a5
+pack_name: Andy’s Canon EOS R5 Profiles
+repository_role: private-profile-pack
+artifact_type: source-repository
+camera:
+  manufacturer: Canon
+  model: EOS R5
+compatibility:
+  application_project_id: canon-eos-r5-camera-reference
+  profile_pack_contract: 1
+sources:
+  baseline: 00 Master/baseline.yaml
+  profiles: 10 Profiles
+  my_menu: 00 Master/my_menu.yaml
+  my_menu_colors: 00 Master/my_menu_colors.yaml
+  profile_lens_guidance: 00 Master/profile_lens_guidance.yaml
+  owned_equipment: data/owned_equipment.yaml
+  controls: controls.yaml
+  registration_targets: 90 Testing/eos_r5_registration_targets.yaml
+  verification_status: 90 Testing/eos_r5_verification_status.yaml
+publication:
+  default_profile_policy: explicit-release-only

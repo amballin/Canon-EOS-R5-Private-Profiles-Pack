@@ -1,0 +1,133 @@
+camera: Canon EOS R5
+status: owner_confirmed_layout_and_current_registrations
+last_confirmed: 2026-08-23
+approved_architecture_date: 2026-07-25
+authority: Direct confirmation and approval from the project owner
+
+evidence_rules:
+  - Canon capability statements describe what the camera supports; they do not establish the chosen setup.
+  - Owner-confirmed status applies only to entries physically verified on the camera.
+  - Approved target assignments remain pending until physically verified on the camera.
+  - Recommendations must be labeled as recommendations and must not be presented as current settings.
+  - Unresolved items remain unresolved until the owner decides them.
+  - IMG_6335 through IMG_6340 are retired historical evidence and are not reliable evidence of the current setup.
+
+controls:
+  - control: Shutter half-press
+    assignment: Metering start
+    status: owner_confirmed
+    notes: Does not start autofocus.
+  - control: AF-ON
+    assignment: Metering and AF start
+    status: owner_confirmed
+    info_details:
+      AF Operation: Maintain current setting
+      AF Method: Face + Tracking
+      Servo AF characteristics: Maintain current setting
+    notes: Uses the stored Eye detection state, including a state changed with the SET button.
+  - control: AE Lock
+    assignment: Metering and AF start
+    status: owner_confirmed
+    info_details:
+      AF Operation: Maintain current setting
+      AF Method: 1-Point AF
+      Servo AF characteristics: Maintain current setting
+    notes: Uses the last 1-Point AF position; it does not automatically recenter the point.
+  - control: AF Point Selection
+    assignment: AF point selection
+    operation: Use Main Dial to change selection; when Face + Tracking is active, INFO toggles Eye detection
+    status: owner_confirmed
+  - control: Lens AF button
+    assignment: AF Off
+    status: owner_confirmed
+    notes: Stops AF while the lens button is used.
+  - control: Depth-of-field preview
+    assignment: One-Shot AF / Servo AF
+    operation: Changes AF Operation
+    status: owner_confirmed
+  - control: SET
+    assignment: Eye detection
+    status: owner_confirmed
+    notes: Toggles the stored Eye detection state when the active AF method supports it; it has no effect with 1-Point AF or Spot AF.
+  - control: Joystick
+    assignment: Direct AF point selection
+    operation: Move the AF point directly; press straight in to recenter it
+    status: owner_confirmed
+    notes: During Face + Tracking adjustment, selects among detected faces or eyes; additional observed Face Select behavior is pending physical verification.
+  - control: Movie Record
+    assignment: Leave default
+    status: owner_confirmed
+    notes: No custom assignment in this architecture.
+  - control: MODE
+    assignment: Leave default
+    status: owner_confirmed
+    notes: No custom assignment in this architecture.
+  - control: LCD panel illumination
+    assignment: Leave default
+    status: owner_confirmed
+    notes: No custom assignment in this architecture.
+  - control: M-Fn
+    assignment: Switch to Custom shooting mode
+    operation: Press repeatedly to switch among C1, C2, and C3
+    status: owner_confirmed
+    notes: The assignment and C1-C3 switching behavior were physically tested. Current registration evidence is recorded separately below.
+
+dials:
+  - control: Main Dial
+    assignment: Shutter Speed
+    status: owner_confirmed
+    notes: Direct exposure control.
+  - control: Rear Wheel
+    assignment: Aperture
+    status: owner_confirmed
+    notes: Direct exposure control.
+  - control: Top Rear Dial
+    assignment: ISO Speed
+    status: owner_confirmed
+    notes: Direct exposure control.
+  - control: Control Ring
+    assignment: Exposure Compensation
+    status: owner_confirmed
+    notes: In Manual exposure, compensation requires Auto ISO.
+
+custom_shooting_modes:
+  architecture: Complete shooting configurations within the baseline-plus-overrides system
+  C1:
+    profile_id: 3f9e95b6-7c08-5ca0-89a7-ad3f878bbc42
+    field_label: General Wildlife
+    status: owner_confirmed
+    unresolved_items: [Image Stabilizer Mode 1]
+  C2:
+    profile_id: d2609cc6-8056-5632-932d-45dcb4416185
+    field_label: Birds in Flight / Action
+    status: owner_confirmed
+    unresolved_items: [Image Stabilizer Mode 3]
+  C3:
+    profile_id: c4489d13-bc1c-507c-a4b3-fe09b02a5ffa
+    field_label: Landscape
+    status: owner_confirmed
+    unresolved_items: [Image Stabilizer Mode 1]
+  notes:
+    - Do not treat C1, C2, or C3 as independent AF-setting controls.
+    - Each mode implements the corresponding complete subject card.
+    - C1, C2, and C3 camera-body targets were registered, recalled, and cross-checked in physical session 3.
+    - Exact lens stabilization Mode 1/3 remains unresolved because the attached lens exposed only IS On/Off.
+    - Any future assignment or target change returns the affected slot to pending until it is re-registered and verified.
+  registration_state:
+    switching_behavior: owner_confirmed
+    C1: registered_and_camera_body_verified
+    C2: registered_and_camera_body_verified
+    C3: registered_and_camera_body_verified
+
+retired_evidence:
+  status: historical_not_current
+  source_screenshots:
+    - IMG_6335
+    - IMG_6336
+    - IMG_6337
+    - IMG_6338
+    - IMG_6339
+    - IMG_6340
+  notes:
+    - The camera settings changed after these images were captured.
+    - Do not use these images to reconstruct or contradict the owner-confirmed setup above.

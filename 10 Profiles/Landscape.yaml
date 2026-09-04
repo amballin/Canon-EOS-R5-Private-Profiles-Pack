@@ -1,0 +1,55 @@
+card_id: c4489d13-bc1c-507c-a4b3-fe09b02a5ffa
+metadata:
+  version: 1.0
+  status: Draft
+  last_updated: 2026-08-20
+  release: true
+title: Landscape
+card:
+  icons:
+    left: landscape
+  field_setup:
+    start: C3
+    source_card_id: c4489d13-bc1c-507c-a4b3-fe09b02a5ffa
+    my_menus:
+    - name: SWITCH
+      settings:
+      - autofocus.subject_detection
+      - shutter.type
+      - stabilization.image_stabilization.mode
+inherits: baseline
+overrides:
+  autofocus:
+    operation: One-Shot AF
+    method: 1-Point AF
+    subject_detection: None
+    eye_detection: Disable
+  drive:
+    mode: Single Shot
+  exposure:
+    mode: Av
+    iso:
+      mode: Fixed
+      value: 100
+  lens:
+    aperture:
+      target: f/8–f/11; bracket before f/16
+checklist:
+- 'Tripod: ISO 100, IS off'
+- 'Handheld: safe shutter, raise ISO, IS Mode 1'
+- Level horizon
+- Histogram checked
+- Focus point confirmed
+watch_for:
+- Highlight clipping
+- Camera shake
+- Wind movement
+- Near-to-far sharpness needed -> Focus Bracketing
+common_mistakes:
+- Shutter too slow handheld
+- Using f/22 unnecessarily
+- Forgetting to turn IS off on tripod
+notes:
+- On a tripod, use ISO 100 and turn IS off; handheld, use Mode 1 and raise ISO as needed for a safe shutter speed.
+- For static scenes requiring large near-to-far depth of field, consider focus bracketing at f/8-f/11 instead of stopping down further; use a tripod and watch for wind movement.
+- Enable Long Exposure NR only for multi-second/night exposures.

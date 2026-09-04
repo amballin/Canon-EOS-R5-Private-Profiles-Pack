@@ -1,0 +1,46 @@
+card_id: 03b72e12-ee0e-5cbc-afd0-c13261db4611
+metadata:
+  version: 1.0
+  status: Draft
+  last_updated: 2026-08-21
+  release: false
+title: Travel
+inherits: baseline
+card:
+  icons:
+    left: travel
+  field_setup:
+    start: C3
+    source_card_id: c4489d13-bc1c-507c-a4b3-fe09b02a5ffa
+    my_menus:
+    - name: AF Case
+      settings:
+      - autofocus.servo_af_case
+    - name: SWITCH
+      settings:
+      - autofocus.subject_detection
+      - shutter.type
+      - stabilization.image_stabilization.mode
+  colors:
+    background: null
+    text: null
+overrides:
+  autofocus:
+    method: 1-Point AF
+    subject_detection: None
+    eye_detection: Disable
+  drive:
+    mode: Single Shot
+checklist:
+- Battery
+- Spare card
+- Shutter speed safe for focal length and subject
+- ISO and stabilization checked
+- Exposure compensation checked
+watch_for:
+- Changing light
+common_mistakes:
+- Leaving exposure compensation set
+notes:
+- Use neutral 1-Point AF for general travel subjects; switch to People detection and Face + Tracking for portraits and family photographs.
+- Raise ISO when needed to protect shutter speed as light or subject movement changes.
