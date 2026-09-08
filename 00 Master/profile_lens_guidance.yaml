@@ -28,10 +28,10 @@ profiles:
         use_when: Normal perched birds and distant details
         field_check: AF; choose limiter range; IS Mode 1
       - lens_id: ef_100_400_is_ii
-        accessory_id: extender_ef_1_4x
         role: alternative
         use_when: Extra reach matters more than speed
         field_check: 140–560mm f/6.3–8; IS Mode 1
+        accessory_id: extender_ef_1_4x
       - lens_id: rf_24_240_is
         role: alternative
         use_when: The bird is close or environmental context matters

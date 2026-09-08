@@ -2,8 +2,8 @@ card_id: 61b4fa46-fe43-50a8-ba94-5087ba532cb6
 metadata:
   version: 1.0
   status: Draft
-  last_updated: 2026-08-20
-  release: true
+  last_updated: 2026-09-07
+  release: false
 title: Birds Perched
 inherits: baseline
 card:
@@ -13,17 +13,17 @@ card:
     start: C1
     source_card_id: 3f9e95b6-7c08-5ca0-89a7-ad3f878bbc42
     my_menus:
+    - name: SWITCH
+      settings:
+      - shutter.type
+      - autofocus.subject_detection
+      - stabilization.image_stabilization.mode
     - name: AF Case
       settings:
       - autofocus.servo_af_case
       - autofocus.tracking_sensitivity
       - autofocus.accel_decel_tracking
       - autofocus.switching_tracked_subjects
-    - name: SWITCH
-      settings:
-      - autofocus.subject_detection
-      - shutter.type
-      - stabilization.image_stabilization.mode
   colors:
     background: null
     text: null

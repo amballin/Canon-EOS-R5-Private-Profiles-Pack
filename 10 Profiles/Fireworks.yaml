@@ -2,10 +2,9 @@ card_id: 4c14a449-ef29-5769-a4fd-a595b0b8209d
 metadata:
   version: 1.0
   status: Draft
-  last_updated: 2026-08-20
-  release: true
+  last_updated: 2026-09-07
+  release: false
 title: Fireworks
-subtitle: null
 inherits: baseline
 card:
   icons:
@@ -16,8 +15,8 @@ card:
     my_menus:
     - name: SWITCH
       settings:
-      - stabilization.image_stabilization.mode
       - shutter.type
+      - stabilization.image_stabilization.mode
   colors:
     background: null
     text: null
