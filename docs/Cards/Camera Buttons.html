@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Camera Settings">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1e3553">
+<title>Camera Buttons - Camera Settings</title>
+<style>
+html{box-sizing:border-box;-webkit-text-size-adjust:100%;background:#1e3553}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-width:0;background:#1e3553;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:clamp(14px,3.75vw,16px);line-height:1.3;overflow-x:hidden}
+.site-nav{max-width:430px;margin:0 auto;--site-nav-bg:#1e3553;--site-nav-text:#ffffff}
+.card{width:min(100%,430px);min-height:calc(100svh - 68px);margin:0 auto;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 20px) max(16px,env(safe-area-inset-left,0px));background:#1e3553}
+.card-identity{position:sticky;top:calc(env(safe-area-inset-top,0px) + 68px);z-index:9;background:#1e3553;box-shadow:0 1px 0 rgba(155,210,255,.22)}
+.header{min-height:44px;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;margin-bottom:4px}
+.header-spacer{min-width:0}
+.header-icon{width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.header-icon.left{justify-self:start}
+.header-icon.right{justify-self:end}
+.header-icon img{display:block;max-width:38px;max-height:38px;width:auto;height:auto;object-fit:contain}
+h1{text-align:center;font-size:clamp(26px,7.5vw,32px);line-height:1.08;margin:0;overflow-wrap:anywhere}
+.sub{text-align:center;color:#b7d2e8;margin:4px 0 12px}
+.field-route{display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;margin:7px 0 12px;padding-bottom:8px;font-size:clamp(12px,3.25vw,14px);font-weight:600}
+.field-route-start,.field-route-menu{padding:2px 8px;border:1px solid #6d8aa1;border-radius:999px;white-space:nowrap}
+.field-route-menu.access-switch{border-color:#72dda8;color:#72dda8}
+.field-route-menu.access-menu-2{border-color:#f0bf69;color:#f0bf69}
+.field-route-menu.access-menu-3{border-color:#c6a6ff;color:#c6a6ff}
+.field-route-menu.access-menu-4{border-color:#ff9fba;color:#ff9fba}
+.field-route-menu.access-menu-5{border-color:#80d8ff;color:#80d8ff}
+.field-route-menu.access-menu-6{border-color:#ff9b7a;color:#ff9b7a}
+h2{color:#8dc8ff;border-bottom:1px solid #53738c;padding-bottom:3px;margin:12px 0 5px;font-size:clamp(19px,5vw,21px);line-height:1.1}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+.reference-section th{padding:14px 8px 7px;border-bottom:1px solid #53738c;text-align:left}
+.reference-section span{margin-right:10px;color:#b7d2e8;font-size:.72rem;letter-spacing:.08em}
+.reference-section strong{font-size:1rem}
+.reference-detail{display:block;margin-top:2px;color:#b7d2e8;font-size:.68rem;font-weight:400}
+td{padding:3px 0;vertical-align:top;overflow-wrap:anywhere}
+td.field-label{width:48%;padding-right:10px;color:#b7d2e8}
+td.field-value{text-align:right;font-weight:600}
+td.field-change{width:22px;padding-left:7px;text-align:right;color:#ffffff;font-weight:800;white-space:nowrap;overflow:visible}
+td.field-value.access-switch{color:#72dda8}
+td.field-value.access-menu-2{color:#f0bf69}
+td.field-value.access-menu-3{color:#c6a6ff}
+td.field-value.access-menu-4{color:#ff9fba}
+td.field-value.access-menu-5{color:#80d8ff}
+td.field-value.access-menu-6{color:#ff9b7a}
+.field-change-legend{margin:5px 0 9px;text-align:right;color:#b7d2e8;font-size:clamp(11px,3vw,12px)}
+.field-change-legend span{color:#ffffff;font-weight:800}
+.rapid-setup{margin:1px 0 9px;border:1px solid rgba(141,200,255,.34);border-radius:9px;overflow:hidden}
+.rapid-setup-table td{padding:5px 8px}
+.rapid-setup-table td.field-label{width:52%}
+.rapid-setup-table td.field-change{width:26px;padding-left:2px;padding-right:8px}
+.rapid-setup-group th{padding:7px 8px 4px;background:rgba(255,255,255,.055);border-top:1px solid rgba(141,200,255,.23);border-bottom:1px solid rgba(141,200,255,.18);text-align:left;color:#8dc8ff;font-size:clamp(11px,3vw,12px);letter-spacing:.055em;text-transform:uppercase}
+.rapid-setup-group:first-child th{border-top:0}
+.rapid-setup-detail{display:block;margin-top:1px;color:#8faec7;font-size:.67rem;font-weight:400;line-height:1.15}
+.rapid-setup-empty{margin:7px 0 12px;color:#b7d2e8}
+.lens-choices{display:grid;gap:6px;margin:5px 0 10px}
+.lens-choice{padding:7px 8px;border:1px solid rgba(141,200,255,.3);border-radius:8px;background:rgba(255,255,255,.035)}
+.lens-choice-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.lens-choice-heading strong{font-size:.92rem}
+.lens-choice-heading span{color:#8dc8ff;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.lens-choice p{margin:3px 0 0;color:#fff;font-size:.78rem;line-height:1.25}
+.lens-choice small{display:block;margin-top:3px;color:#b7d2e8;font-size:.7rem;line-height:1.25}
+.lens-choice small strong{color:#8dc8ff}
+.setting-label{display:inline-flex;align-items:center;gap:7px;max-width:100%}
+.setting-icon{display:block;width:22px;height:22px;object-fit:contain;flex:0 0 22px;filter:brightness(0) saturate(100%) invert(76%) sepia(32%) saturate(784%) hue-rotate(178deg) brightness(103%) contrast(101%)}
+.setting-icon[src$="af_point_button.svg"]{width:31px;height:18px;flex-basis:31px;object-fit:contain}
+ul{margin:4px 0 0;padding-left:22px}
+li{margin:2px 0;overflow-wrap:anywhere}
+a{color:#b7dfff;text-underline-offset:2px}
+
+.site-nav{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:minmax(52px,1fr) minmax(0,auto) minmax(52px,1fr);align-items:center;gap:8px;width:100%;padding:calc(env(safe-area-inset-top,0px) + 12px) max(12px,env(safe-area-inset-right,0px)) 11px max(12px,env(safe-area-inset-left,0px));background:var(--site-nav-bg,#132742);color:var(--site-nav-text,#f7fbff);border-bottom:1px solid var(--site-nav-rule,rgba(155,210,255,.22));font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.site-nav__back,.site-nav__home{color:inherit;text-decoration:none;min-height:44px;display:flex;align-items:center}
+.site-nav__back{justify-self:start;font-size:15px;font-weight:600}
+.site-nav__home{justify-self:center;text-align:center;font-size:20px;font-weight:750;white-space:nowrap}
+.site-nav__spacer{min-width:0}
+.site-nav__brand{justify-self:end;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.site-nav__brand img{display:block;max-width:38px;max-height:38px;width:auto;height:auto;object-fit:contain}
+.site-nav__meta{grid-column:1/-1;text-align:center;color:var(--site-nav-muted,#b9d5ec);font-size:13px;margin:-5px 0 0}
+.site-nav__back:focus-visible,.site-nav__home:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:4px}
+.output-mode .site-nav{display:none!important}
+@media print{.site-nav{display:none!important}}
+@media (max-width:340px){.site-nav__home{font-size:18px}.site-nav__back{font-size:14px}}
+
+@media (min-width:431px){body{padding:24px}.card{min-height:0;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.22)}}
+@media (max-width:340px){.card{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}td.field-label{width:50%}td.field-change{width:20px;padding-left:5px}.setting-icon{width:20px;height:20px;flex-basis:20px}}
+@media print{.card-identity{position:static;box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="site-nav" data-site-navigation><a class="site-nav__back" href="../index.html"><span aria-hidden="true">←</span>&nbsp;Back</a><a class="site-nav__home" href="../index.html">Camera Settings</a><span class="site-nav__brand"><img src="../web-assets/Card%20Logos/png/Silver%20Logo.png" alt="" aria-hidden="true" onerror="this.hidden=true"></span></header>
+<article class="card">
+<div class="card-identity">
+<div class="header">
+<div class="header-icon left"><img src="../web-assets/Card%20Logos/png/Camera%20Default.png" alt="" aria-hidden="true" onerror="this.hidden=true"></div>
+<h1>Camera Buttons</h1>
+<div class="header-icon right"></div>
+</div>
+<div class="sub">Confirmed Layout + Approved Target</div>
+
+</div>
+<h2>Settings</h2><table><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_shutterbtn-halfpress.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Shutter button half-press</span></span></td><td class="field-value">Metering start<small class="reference-detail">Does not start autofocus</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_btn-af-on.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>AF-ON button</span></span></td><td class="field-value">Metering and AF start<small class="reference-detail">AF Operation: Maintain current setting; AF Method: Face + Tracking; Servo AF characteristics: Maintain current setting; Uses the stored Eye detection state, including a state changed with the SET button</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_btn-ae-lock.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>AE Lock button</span></span></td><td class="field-value">Metering and AF start<small class="reference-detail">AF Operation: Maintain current setting; AF Method: 1-Point AF; Servo AF characteristics: Maintain current setting; Uses the last 1-Point AF position; it does not automatically recenter the point</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/card_icons/SVG/af_point_button.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>AF Point Selection button</span></span></td><td class="field-value">AF point selection<small class="reference-detail">Use Main Dial to change selection; when Face + Tracking is active, INFO toggles Eye detection</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_btn-lens.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Lens AF button</span></span></td><td class="field-value">AF Off<small class="reference-detail">Stops AF while the lens button is used</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_exp-sim-during.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>DOF button</span></span></td><td class="field-value">One-Shot AF / Servo AF<small class="reference-detail">Changes AF Operation</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_btn-set.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>SET button</span></span></td><td class="field-value">Eye detection<small class="reference-detail">Toggles the stored Eye detection state when the active AF method supports it; it has no effect with 1-Point AF or Spot AF</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_multi-controller.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Joystick</span></span></td><td class="field-value">Direct AF point selection<small class="reference-detail">Move the AF point directly; press straight in to recenter it; During Face + Tracking adjustment, selects among detected faces or eyes; additional observed Face Select behavior is pending physical verification</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_btn-m-fn.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>M-Fn button</span></span></td><td class="field-value">Switch to Custom shooting mode<small class="reference-detail">Press repeatedly to switch among C1, C2, and C3; The assignment and C1-C3 switching behavior were physically tested. Current registration evidence is recorded separately below</small></td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_main-dial.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Main Dial</span></span></td><td class="field-value">Shutter Speed</td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_sub-dial.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Rear Wheel</span></span></td><td class="field-value">Aperture</td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_sub-dial2.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Top Rear Dial</span></span></td><td class="field-value">ISO Speed</td></tr><tr><td class="field-label"><span class="setting-label"><img src="../web-assets/icons/canon_r5_official/icon_controlring.svg" alt="" aria-hidden="true" class="setting-icon" onerror="this.hidden=true"><span>Control Ring</span></span></td><td class="field-value">Exposure Compensation</td></tr></table>
+
+
+<h2>Checklist</h2>
+<ul><li>Practice back-button AF before a critical shoot.</li><li>Use SET to choose eye priority before AF-ON when Face + Tracking is active.</li><li>Verify the C1-C3 registrations on the camera.</li><li>Use the linked deep dive for My Menu: SWITCH and My Menu: AF Case.</li><li>Confirm Manual + Auto ISO before using exposure compensation.</li><li>Recheck assignments after a reset or firmware update.</li></ul>
+<h2>Watch For</h2>
+<ul><li>Lock can disable configured dials, joystick, control ring, touchscreen across shooting modes</li><li>AE Lock: 1-Point AF does not use Subject Detection or Eye Detection for that AF action; the stored profile settings remain unchanged</li><li>SET has no effect when the active AF method cannot use Eye detection</li><li>AE Lock remembers the last 1-Point AF position; press the joystick straight in when recentering is needed</li><li>Exposure Compensation on Control Ring requires Auto ISO in Manual exposure</li></ul>
+<h2>Common Mistakes</h2>
+<ul><li>Expecting shutter half-press to autofocus after enabling back-button AF</li><li>Pressing AF-ON and AE Lock together instead of choosing one AF behavior</li><li>Expecting Eye Detection to operate with the 1-Point AF override</li><li>Expecting SET to toggle Eye detection while 1-Point AF or Spot AF is active</li><li>Assuming C1, C2, or C3 contains its documented profile without verifying the registration</li></ul>
+<h2>Notes</h2>
+<ul><li><a href="../appendices/Custom%20Controls%20%26%20Menus%2C%20Back-Button%20AF%20%26%20Dial%20Strategies.html?return=../Cards/Camera%20Buttons.html">Button setup, My Menu tabs, and AF-ON / AE Lock INFO details</a></li></ul>
+</article>
+</body>
+</html>

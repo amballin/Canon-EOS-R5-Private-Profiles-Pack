@@ -1,0 +1,15 @@
+{
+  "application": {
+    "commit": "20da68403bda668a2d4a199dd307af57d81525b0",
+    "dirty_source_fingerprint": null
+  },
+  "profile_pack": {
+    "commit": "8d45e7a3842f1887be338f81a0c8fb88c95f3ee8",
+    "contract_version": 1,
+    "dirty_source_fingerprint": null,
+    "manifest_version": 1,
+    "pack_fingerprint": "d25d961b0652c2e8e7b2f2a2a6d9da9ac0bd14497a49d88612325d904a706390",
+    "pack_id": "7b8b09df-41c8-4500-aa0e-56fac4e9f8a5"
+  },
+  "schema_version": 1
+}

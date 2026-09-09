@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Long Exposure &amp; Night Photography</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;color:#172033;--site-nav-bg:#132742;--site-nav-text:#f7fbff;--site-nav-muted:#b9d5ec}
+main{max-width:860px;margin:0 auto;padding:24px 24px 40px}
+h1{font-size:34px}
+h2{border-bottom:1px solid #d7dee8;padding-bottom:4px;margin-top:32px}
+h3{margin-top:24px}
+:where(h1,h2,h3,h4,h5,h6)[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 76px)}
+table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;width:100%;margin:16px 0;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid #d7dee8;padding:7px;text-align:left;vertical-align:top}
+code{background:#eef2f7;padding:2px 4px;border-radius:4px}
+a{color:#165d9c}
+
+.access-token{display:inline-block;padding:1px 6px;border-radius:999px;font-size:.93em;line-height:1.35;white-space:nowrap;vertical-align:baseline;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.access-token.access-switch{background:#72dda8;color:#123047}
+.access-token.access-menu-2{background:#f0bf69;color:#342400}
+.access-token.access-mfn{background:#4f46e5;color:#fff}
+
+.appendix-index-return{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:9;display:inline-flex;align-items:center;min-height:42px;padding:8px 12px;border:1px solid #b8c7d9;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 2px 10px rgba(23,32,51,.18);font-size:14px;font-weight:700;text-decoration:none}
+.appendix-index-return__short{display:none}
+.appendix-index-return:focus-visible{outline:2px solid #165d9c;outline-offset:2px}
+.output-mode .appendix-index-return{display:none!important}
+@media print{.appendix-index-return{display:none!important}}
+@media (max-width:480px){.appendix-index-return__full{display:none}.appendix-index-return__short{display:inline}}
+
+.site-nav{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:minmax(52px,1fr) minmax(0,auto) minmax(52px,1fr);align-items:center;gap:8px;width:100%;padding:calc(env(safe-area-inset-top,0px) + 12px) max(12px,env(safe-area-inset-right,0px)) 11px max(12px,env(safe-area-inset-left,0px));background:var(--site-nav-bg,#132742);color:var(--site-nav-text,#f7fbff);border-bottom:1px solid var(--site-nav-rule,rgba(155,210,255,.22));font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.site-nav__back,.site-nav__home{color:inherit;text-decoration:none;min-height:44px;display:flex;align-items:center}
+.site-nav__back{justify-self:start;font-size:15px;font-weight:600}
+.site-nav__home{justify-self:center;text-align:center;font-size:20px;font-weight:750;white-space:nowrap}
+.site-nav__spacer{min-width:0}
+.site-nav__brand{justify-self:end;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.site-nav__brand img{display:block;max-width:38px;max-height:38px;width:auto;height:auto;object-fit:contain}
+.site-nav__meta{grid-column:1/-1;text-align:center;color:var(--site-nav-muted,#b9d5ec);font-size:13px;margin:-5px 0 0}
+.site-nav__back:focus-visible,.site-nav__home:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:4px}
+.output-mode .site-nav{display:none!important}
+@media print{.site-nav{display:none!important}}
+@media (max-width:340px){.site-nav__home{font-size:18px}.site-nav__back{font-size:14px}}
+
+</style>
+</head>
+<body>
+<header class="site-nav" data-site-navigation><a class="site-nav__back" href="../index.html"><span aria-hidden="true">←</span>&nbsp;Back</a><a class="site-nav__home" href="../index.html">Camera Settings</a><span class="site-nav__brand"><img src="data:image/png;base64,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" alt="" aria-hidden="true" onerror="this.hidden=true"></span></header><script>
+(function () {
+  const back = document.querySelector(".site-nav__back");
+  if (!back) return;
+  const candidate = new URLSearchParams(window.location.search).get("return");
+  const cardReturn = /^\.\.\/Cards\/[^/?#]+\.html$/;
+  const appendixReturn = /^[^/?#]+\.html$/;
+  if (candidate && (cardReturn.test(candidate) || appendixReturn.test(candidate))) {
+    back.setAttribute("href", candidate);
+  } else {
+    back.setAttribute("href", "../index.html");
+  }
+})();
+</script>
+<main><h1 id="long-exposure-night-photography">Long Exposure &amp; Night Photography</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Explain the Canon R5 choices that matter for long exposures, night photography, fireworks, waterfalls, light painting, Milky Way images, and other tripod-based low-light work.</p>
+<p>This appendix is the single source of truth for Long Exposure Noise Reduction (LENR). Profiles should reference this appendix rather than duplicating LENR explanations.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#long-exposure-noise-reduction-lenr">Long Exposure Noise Reduction (LENR)</a></li>
+<li><a href="#processing-time">Processing Time</a></li>
+<li><a href="#auto-setting">AUTO Setting</a></li>
+<li><a href="#decision-guide">Decision Guide</a></li>
+<li><a href="#recommended-settings-by-profile">Recommended Settings by Profile</a></li>
+<li><a href="#cross-references">Cross References</a></li>
+</ul>
+<h2 id="what-it-does">What it Does</h2>
+<p>Long exposure settings control how the R5 handles multi-second captures, sensor heat, tripod stability, shutter behavior, stabilization, and processing delays.</p>
+<h3 id="long-exposure-noise-reduction-lenr">Long Exposure Noise Reduction (LENR)</h3>
+<p>Long Exposure Noise Reduction performs a second exposure, called a dark frame, immediately after the original exposure with the shutter closed.</p>
+<p>The camera compares the dark frame with the original exposure and removes or reduces:</p>
+<ul>
+<li>Hot pixels.</li>
+<li>Thermal noise.</li>
+<li>Amp glow.</li>
+<li>Fixed-pattern sensor noise.</li>
+</ul>
+<p>LENR is different from High ISO Noise Reduction. High ISO Noise Reduction targets high-sensitivity noise; LENR targets artifacts created or revealed by longer exposure times.</p>
+<h2 id="how-it-works">How it Works</h2>
+<p>The camera uses dark frame subtraction. If the original exposure is 30 seconds, the R5 records the main image, then spends roughly another 30 seconds recording a dark frame. The dark frame contains sensor noise patterns but no scene detail, allowing the camera to subtract those artifacts.</p>
+<p>During the dark-frame exposure, the camera cannot take another photograph.</p>
+<h3 id="processing-time">Processing Time</h3>
+<p>LENR effectively doubles capture time.</p>
+<table>
+<tr><th>Exposure</th><th>Camera Busy Time</th></tr>
+<tr><td>5 sec</td><td>10 sec</td></tr>
+<tr><td>15 sec</td><td>30 sec</td></tr>
+<tr><td>30 sec</td><td>60 sec</td></tr>
+<tr><td>1 minute</td><td>2 minutes</td></tr>
+<tr><td>5 minutes</td><td>10 minutes</td></tr>
+</table>
+<p>The camera may display <code>BUSY</code> while the dark frame is being captured or processed.</p>
+<h2 id="advantages">Advantages</h2>
+<ul>
+<li>Reduces hot pixels.</li>
+<li>Reduces thermal noise.</li>
+<li>Reduces fixed-pattern sensor noise.</li>
+<li>Helps control amp glow.</li>
+<li>Improves single long exposures.</li>
+<li>Is especially useful on warm nights.</li>
+<li>Produces cleaner night photographs directly from the camera.</li>
+</ul>
+<h2 id="disadvantages">Disadvantages</h2>
+<ul>
+<li>Doubles shooting time.</li>
+<li>Makes the camera unavailable during processing.</li>
+<li>Increases battery usage.</li>
+<li>Can cause missed opportunities.</li>
+<li>Is not efficient for image stacking workflows.</li>
+<li>Can interrupt fireworks, lightning, time-lapse, and changing-light sequences.</li>
+</ul>
+<h2 id="recommended-uses">Recommended Uses</h2>
+<p>Turn LENR On for important one-off long exposures where maximum single-frame image quality is more important than speed.</p>
+<p>Recommended On:</p>
+<ul>
+<li>Single night landscapes.</li>
+<li>Single cityscapes.</li>
+<li>Single waterfall exposures.</li>
+<li>Single light-painting images.</li>
+<li>Single fireworks exposures.</li>
+<li>Single Milky Way exposures.</li>
+<li>Any important one-off long exposure where maximum image quality is desired.</li>
+</ul>
+<p>For exposures under a few seconds, the benefit is usually minimal. LENR becomes more valuable as exposure duration and sensor heat increase.</p>
+<h2 id="when-not-to-use">When Not to Use</h2>
+<p>Turn LENR Off for workflows where many images will be captured or combined later.</p>
+<p>Recommended Off:</p>
+<ul>
+<li>Focus bracketing.</li>
+<li>Exposure bracketing.</li>
+<li>Time-lapse.</li>
+<li>Astrophotography stacking.</li>
+<li>Star trails.</li>
+<li>Multiple waterfall exposures.</li>
+<li>Burst long exposures.</li>
+<li>Waterdrop flash work.</li>
+<li>Any workflow where many images will be combined later.</li>
+</ul>
+<p>Post-processing software generally provides better results for stacked images than applying LENR to every frame in camera. If shooting many long exposures, disable LENR and remove hot pixels during post-processing or with a planned dark-frame workflow.</p>
+<h3 id="auto-setting">AUTO Setting</h3>
+<p>AUTO lets the camera decide when to apply Long Exposure Noise Reduction.</p>
+<p>AUTO is suitable for general photography and travel, but the user may experience unexpected processing delays. If timing matters, choose On or Off deliberately instead of leaving the decision to the camera.</p>
+<h2 id="decision-guide">Decision Guide</h2>
+<p>Long exposure?</p>
+<ul>
+<li>No: Off or Auto.</li>
+<li>Yes: continue.</li>
+</ul>
+<p>More than one exposure?</p>
+<ul>
+<li>Yes: Off.</li>
+<li>No: continue.</li>
+</ul>
+<p>Maximum single-frame image quality required?</p>
+<ul>
+<li>Yes: On.</li>
+<li>No: Auto.</li>
+</ul>
+<p>If timing matters more than maximum single-frame cleanup, choose Off.</p>
+<h2 id="recommended-settings-by-profile">Recommended Settings by Profile</h2>
+<table>
+<tr><th>Photography Type</th><th>Recommended Setting</th></tr>
+<tr><td>Normal</td><td>Auto</td></tr>
+<tr><td>Travel</td><td>Auto</td></tr>
+<tr><td>Landscape (single exposure)</td><td>On</td></tr>
+<tr><td>Landscape (multiple exposures)</td><td>Off</td></tr>
+<tr><td>Night Landscape</td><td>On</td></tr>
+<tr><td>Milky Way (single image)</td><td>On</td></tr>
+<tr><td>Milky Way (stacking)</td><td>Off</td></tr>
+<tr><td>Star Trails</td><td>Off</td></tr>
+<tr><td>Waterfalls</td><td>Off</td></tr>
+<tr><td>Light Painting</td><td>On</td></tr>
+<tr><td>Fireworks (single exposure)</td><td>On</td></tr>
+<tr><td>Fireworks (sequence)</td><td>Off</td></tr>
+<tr><td>Focus Bracketing</td><td>Off</td></tr>
+<tr><td>Wildlife</td><td>Off</td></tr>
+<tr><td>Birds in Flight</td><td>Off</td></tr>
+<tr><td>Sports</td><td>Off</td></tr>
+<tr><td>Waterdrops</td><td>Off</td></tr>
+</table>
+<h2 id="canon-specific-notes">Canon-Specific Notes</h2>
+<p>On the Canon EOS R5, Long Exposure Noise Reduction can affect RAW and JPEG workflows because the correction is applied by the camera, not merely stored as a post-processing suggestion.</p>
+<p>The project baseline should avoid forcing LENR On. Use Auto for general/travel workflows when convenience matters, On for single critical long exposures, and Off for stacked or repeated-capture workflows.</p>
+<p>LENR is separate from High ISO Noise Reduction. Do not use LENR as a general high-ISO cleanup tool.</p>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>For exposures under a few seconds, the benefit is usually minimal.</li>
+<li>LENR is most valuable for long exposures where sensor heating becomes significant.</li>
+<li>If shooting many long exposures, disable LENR and remove hot pixels during post-processing.</li>
+<li>Expect the camera to display <code>BUSY</code> while capturing the dark frame.</li>
+<li>Decide before the sequence starts; changing mid-shoot can make files inconsistent.</li>
+<li>Watch battery life during long exposure sessions.</li>
+</ul>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<ul>
+<li>Leaving LENR On after a night shoot.</li>
+<li>Using LENR for waterdrop flash work.</li>
+<li>Confusing LENR with High ISO Noise Reduction.</li>
+<li>Missing fireworks or lightning because the camera is busy processing.</li>
+<li>Applying LENR to every frame in a stacking workflow.</li>
+<li>Forgetting that processing delay scales with exposure length.</li>
+</ul>
+<h2 id="cross-references">Cross References</h2>
+<ul>
+<li>Profiles: Camera Defaults, Fireworks, Landscape, Macro, Travel, Waterdrops.</li>
+<li>Settings: <code>image.long_exposure_noise_reduction.value</code>, shutter speed, drive mode, ISO, flash mode.</li>
+<li>Related appendices:</li>
+<li><a href="Focus%20Bracketing%20%26%20In-Camera%20Depth%20Compositing.html?return=Long%20Exposure%20%26%20Night%20Photography.html">Focus Bracketing &amp; In-Camera Depth Compositing</a></li>
+<li><a href="Flash%20Photography.html?return=Long%20Exposure%20%26%20Night%20Photography.html">Flash Photography</a></li>
+<li><a href="R5%20Quick%20Reference.html?return=Long%20Exposure%20%26%20Night%20Photography.html">R5 Quick Reference</a></li>
+</ul></main>
+<a class="appendix-index-return" href="#table-of-contents" aria-label="Return to table of contents"><span aria-hidden="true">↑&nbsp;</span><span class="appendix-index-return__full">Return to table of contents</span><span class="appendix-index-return__short">Index</span></a>
+</body>
+</html>
