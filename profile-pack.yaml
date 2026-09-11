@@ -1,6 +1,6 @@
 manifest_version: 1
 pack_id: 7b8b09df-41c8-4500-aa0e-56fac4e9f8a5
-pack_name: Andy’s R5 Profiles
+pack_name: "Andy\u2019s R5 Profiles"
 repository_role: private-profile-pack
 artifact_type: source-repository
 camera:
@@ -8,7 +8,7 @@ camera:
   model: EOS R5
 compatibility:
   application_project_id: canon-eos-r5-camera-reference
-  profile_pack_contract: 1
+  profile_pack_contract: 2
 sources:
   baseline: 00 Master/baseline.yaml
   profiles: 10 Profiles
@@ -21,3 +21,24 @@ sources:
   verification_status: 90 Testing/eos_r5_verification_status.yaml
 publication:
   default_profile_policy: explicit-release-only
+  release_metadata:
+    schema_version: 1
+    current:
+      major: 1
+      minor: 0
+      published_at: '2026-09-11T14:04:29.006139Z'
+      source_commit: 70c6a566a08e3f6370e9448be867ebddd6f3f856
+      content_digest: b0f170991c72d04e1dd7ea39de1459cf310162c04f3d9f564ac1f9869ce3c18b
+      renderer:
+        application_version: 0.129.0
+        application_commit: 4d67f838e85aeca46f018b0dfbdfe331360cc9aa
+      released_card_ids:
+      - 24499188-e352-5bc4-b51b-2c54b50da333
+      - 24553406-f5c7-535b-9822-706b50a87dce
+      - 3f2f9197-1aff-54cf-a526-32cac18daee8
+      - 3f9e95b6-7c08-5ca0-89a7-ad3f878bbc42
+      - 468084df-890b-5b91-882e-221d2a61ab8e
+      - 61b4fa46-fe43-50a8-ba94-5087ba532cb6
+      - 7b1cf834-7ab2-504e-85a5-5e393092a63d
+      - c4489d13-bc1c-507c-a4b3-fe09b02a5ffa
+      - d2609cc6-8056-5632-932d-45dcb4416185
