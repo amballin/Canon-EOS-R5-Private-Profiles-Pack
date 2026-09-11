@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "photography-reference";
-const CACHE_NAME = "photography-reference-b0f170991c72d04e";
+const CACHE_NAME = "photography-reference-06be0dbdf0bdc6a1";
 const CACHE_URLS = [
   "./",
   ".nojekyll",
