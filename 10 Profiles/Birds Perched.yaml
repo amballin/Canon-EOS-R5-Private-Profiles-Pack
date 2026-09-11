@@ -2,8 +2,8 @@ card_id: 61b4fa46-fe43-50a8-ba94-5087ba532cb6
 metadata:
   version: 1.0
   status: Draft
-  last_updated: 2026-09-07
-  release: false
+  last_updated: 2026-09-10
+  release: true
 title: Birds Perched
 inherits: baseline
 card:
