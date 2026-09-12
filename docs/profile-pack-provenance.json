@@ -1,21 +1,21 @@
 {
   "application": {
-    "commit": "09b0c58340306a768bdb4547eb6655dccfdd6825",
+    "commit": "f01cb900574984671b142d6cc34e8d390ce25251",
     "dirty_source_fingerprint": null
   },
   "profile_pack": {
-    "commit": "06b4d4f26cf59190203475533dd848e2063e1a44",
+    "commit": "131c43d35747a4cd190d26856cdf32dca24f28c9",
     "contract_version": 2,
-    "dirty_source_fingerprint": "7d68721f9fa68fbdbb07935c36d5102656a56c726372a9ae59675cebc0dd787b",
+    "dirty_source_fingerprint": "a0b96d9059651bb62b6490adcc39d145e783f0a7b93356ca3f9d22cf8e6cbd6d",
     "manifest_version": 1,
-    "pack_fingerprint": "0a4c7d5f367e0de3b7fe21340111ab28e21010c35a8c03392c34f19c15e1c2e8",
+    "pack_fingerprint": "5f891544c00aa42099a2e448f75a83f981874cdf7018111effa50992dd5d6ff2",
     "pack_id": "7b8b09df-41c8-4500-aa0e-56fac4e9f8a5",
     "release_metadata": {
       "current": {
-        "content_digest": "06be0dbdf0bdc6a17dd384d273b0c0322af4ac7ce7abfe77561407a39ef274b8",
+        "content_digest": "01b6af3d61ce85f49786f591557aedd14c94eb8158e2196866e91a95cef894b3",
         "major": 1,
-        "minor": 1,
-        "published_at": "2026-09-11T21:50:17.819429Z",
+        "minor": 2,
+        "published_at": "2026-09-12T01:39:24.357857Z",
         "released_card_ids": [
           "24499188-e352-5bc4-b51b-2c54b50da333",
           "24553406-f5c7-535b-9822-706b50a87dce",
@@ -28,10 +28,10 @@
           "d2609cc6-8056-5632-932d-45dcb4416185"
         ],
         "renderer": {
-          "application_commit": "09b0c58340306a768bdb4547eb6655dccfdd6825",
-          "application_version": "0.134.0"
+          "application_commit": "f01cb900574984671b142d6cc34e8d390ce25251",
+          "application_version": "0.135.0"
         },
-        "source_commit": "06b4d4f26cf59190203475533dd848e2063e1a44"
+        "source_commit": "131c43d35747a4cd190d26856cdf32dca24f28c9"
       },
       "schema_version": 1
     }
